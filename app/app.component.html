@@ -1,0 +1,9 @@
+<!--navbar-->
+<app-navbar (featureSelected)="onNavigate($event)"></app-navbar>
+<app-home *ngIf="loadedFeature == 'home'"> </app-home>
+<app-about *ngIf="loadedFeature == 'about'"></app-about>
+<app-contact *ngIf="loadedFeature == 'contact'"></app-contact>
+<app-services *ngIf="loadedFeature == 'services'"></app-services>
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->
+

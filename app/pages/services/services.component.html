@@ -1,0 +1,14 @@
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let et of eventData">
+            <div class="eventbox mt-3 mb-5">
+                <img src="{{et.eventImg}}">
+                <h1>{{et.eventName}}</h1>
+                <p>{{et.eventDetails}}</p>
+                <p>{{et.eventPrice | currency:'INR'}}</p> <br>
+                <a class="buybtn" [routerLink]="['/service',et.id]">Book Now &nbsp; <i class="bi bi-bookmark-heart"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

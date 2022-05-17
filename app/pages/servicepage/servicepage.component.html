@@ -1,0 +1,75 @@
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <a routerLink="../../services" class="btn btn-sm btn-dark mb-3">Back</a>
+            <img src="{{serviceData[0].eventImg}}" width="100%"/>
+            <h1 class="mt-3">{{serviceData[0].eventName}}</h1>
+            <p>{{serviceData[0].eventDetails}}</p>
+            <p>{{serviceData[0].eventPrice | currency:'INR'}}</p>
+        </div>
+
+        <div class="col-lg-6 col-lg-12">
+            <h1>Enter Your Details</h1>
+            <form [formGroup]="bookevent" (ngSubmit)="Booking()">
+                <div class="mb-3">
+                  <label class="form-label">Full Name</label>
+                  <input formControlName="fullname" type="text" class="form-control" placeholder="Enter Your Full Name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mobile Number</label>
+                    <input formControlName="mobile" type="text" class="form-control" placeholder="Enter Your Mobile Number">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Number of People Attending</label>
+                    <input formControlName="peopleattending" type="text" class="form-control" placeholder="Enter Number of People Attending">
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Special Message</label>
+                      <input formControlName="specialmessage" type="text" class="form-control" placeholder="Enter any Special Message">
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Address</label>
+                    <input formControlName="address" type="text" class="form-control" placeholder="Enter your Address">
+                  </div>
+
+                <!-- <input formControlName="fullname" type="text"  class="form-control" placeholder="Enter Your Full Name"/>
+                <input formControlName="mobile" type="text"  class="form-control" placeholder="Enter Your Mobile Number"/>
+                <input formControlName="peopleattending" type="text"  class="form-control" placeholder="People are Going To Attend"/> -->
+                <!-- <input formControlName="specialmessage" type="text"  class="form-control" placeholder="Enter any Special Message"/>
+                <textarea formControlName="address" class="form-control" placeholder="Enter your Address"></textarea> -->
+
+                <button type="submit" [disabled]="!bookevent.valid" class="btn btn-md btn-dark mt-3">Book Event</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+
+
+<!-- <div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-6" *ngIf="serviceData">
+            <a routerLink="../../services" class="btn btn-sm btn-dark mb-3">Back</a>
+            <img src="{{serviceData[0].eventImg}}" width="100%"/>
+            <h1 class="mt-3">{{serviceData[0].eventName}}</h1>
+            <p>{{serviceData[0].eventDetails}}</p>
+            <p>{{serviceData[0].eventPrice | currency:'INR'}}</p>
+        </div>
+
+        <div class="col-lg-6 col-lg-12">
+            <h1>Enter Your Details</h1>
+            <form>
+                <input type="text"  class="form-control" placeholder="Enter Your Full Name"/>
+                <input type="text"  class="form-control" placeholder="Enter Your Mobile Number"/>
+                <input type="text"  class="form-control" placeholder="People are Going To Attend"/>
+                <input type="text"  class="form-control" placeholder="Enter any Special Message"/>
+                <textarea class="form-control" placeholder="Enter your Address"></textarea>
+                <button (click)="booking()" class="btn btn-md btn-dark mt-3">Book Event</button>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer> -->
